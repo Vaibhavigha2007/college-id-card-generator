@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College ID Card Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .card {
+            background: white;
+            width: 330px;
+            margin: 25px auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px;
+        }
+
+        .card h2 {
+            margin: 8px;
+        }
+
+        .card p {
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>College ID Card Generator</h1>
+
+    <input type="text" id="name" placeholder="Full Name">
+
+    <input type="text" id="college" placeholder="College Name">
+
+    <input type="text" id="course" placeholder="Course">
+
+    <input type="text" id="classYear" placeholder="Class / Year">
+
+    <input type="text" id="studentId" placeholder="Student ID / Roll No.">
+
+    <input type="text" id="mobile" placeholder="Mobile No.">
+
+    <input type="text" id="photo" placeholder="Photo URL">
+
+    <button onclick="generateCard()">Generate ID Card</button>
+
+    <div class="card" id="idCard">
+
+        <img id="cardPhoto" class="photo" src="" alt="Photo">
+
+        <h2 id="cardName"></h2>
+
+        <p id="cardCollege"></p>
+
+        <p><b>Course:</b> <span id="cardCourse"></span></p>
+
+        <p><b>Class / Year:</b> <span id="cardClass"></span></p>
+
+        <p><b>Student ID:</b> <span id="cardId"></span></p>
+
+        <p><b>Mobile:</b> <span id="cardMobile"></span></p>
+
+    </div>
+
+</div>
+
+<script>
+function generateCard() {
+
+    document.getElementById("cardName").innerText =
+        document.getElementById("name").value;
+
+    document.getElementById("cardCollege").innerText =
+        document.getElementById("college").value;
+
+    document.getElementById("cardCourse").innerText =
+        document.getElementById("course").value;
+
+    document.getElementById("cardClass").innerText =
+        document.getElementById("classYear").value;
+
+    document.getElementById("cardId").innerText =
+        document.getElementById("studentId").value;
+
+    document.getElementById("cardMobile").innerText =
+        document.getElementById("mobile").value;
+
+    document.getElementById("cardPhoto").src =
+        document.getElementById("photo").value;
+
+    document.getElementById("idCard").style.display = "block";
+}
+</script>
+
+</body>
+      </html>
